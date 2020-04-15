@@ -1,0 +1,2605 @@
+/**
+ * Table Of Content
+ * ================
+ *
+ * 1. Normalize
+ * 2. Base Styles
+ *      Fonts
+ *      Default Styles
+ * 3. Main Styles
+ *      Wrapper
+ *      Header
+ *      Close Button
+ *      Dropdown
+ *      Forms
+  *     Typography
+ * 4. Sides
+ *      Main Sides Style
+ *      Left Side Styles
+ *      Top Side Styles
+ *      Right Side Styles
+ *      Bottom Side Styles
+ * 5. Flaticon
+ *
+**/
+
+/* normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css
+ * ==============================*/
+
+html {
+  line-height: 1.15;
+      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font: 1em monospace, monospace;
+  /* 1 */
+  /* 2 */
+}
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+          text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+     -moz-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font: 1em monospace, monospace;
+  /* 1 */
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background: #FF0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: 100%/1.15 sans-serif;
+  /* 1 */
+  /* 1 */
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* Base Styles
+ * ==============================*/
+
+/* Fonts */
+
+@font-face {
+  font-family: "Droid Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/DroidSans-Regular.eot?") format("eot"), url("../fonts/DroidSans-Regular.woff2") format("woff2"), url("../fonts/DroidSans-Regular.woff") format("woff"), url("../fonts/DroidSans-Regular.ttf") format("truetype"), url("../fonts/DroidSans-Regular.svg#str-replace(\"Droid Sans\", \" \", \"_\")") format("svg");
+}
+
+@font-face {
+  font-family: "Droid Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/DroidSans-Bold.eot?") format("eot"), url("../fonts/DroidSans-Bold.woff2") format("woff2"), url("../fonts/DroidSans-Bold.woff") format("woff"), url("../fonts/DroidSans-Bold.ttf") format("truetype"), url("../fonts/DroidSans-Bold.svg#str-replace(\"Droid Sans\", \" \", \"_\")") format("svg");
+}
+
+@font-face {
+  font-family: "Bungee";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Bungee-Regular.eot?") format("eot"), url("../fonts/Bungee-Regular.woff2") format("woff2"), url("../fonts/Bungee-Regular.woff") format("woff"), url("../fonts/Bungee-Regular.ttf") format("truetype"), url("../fonts/Bungee-Regular.svg#str-replace(\"Bungee\", \" \", \"_\")") format("svg");
+}
+
+@font-face {
+  font-family: "Unica One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/UnicaOne-Regular.eot?") format("eot"), url("../fonts/UnicaOne-Regular.woff2") format("woff2"), url("../fonts/UnicaOne-Regular.woff") format("woff"), url("../fonts/UnicaOne-Regular.ttf") format("truetype"), url("../fonts/UnicaOne-Regular.svg#str-replace(\"Unica One\", \" \", \"_\")") format("svg");
+}
+
+/* Default Styles */
+
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+p {
+  margin: 8px 0 15px;
+}
+
+a {
+  color: #EAB311;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+body {
+  font: 15px/1.75 "Droid Sans", sans-serif;
+  background: #1F1F1E;
+  color: #D8D8D8;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Main Styles
+ * ==============================*/
+
+/* Background Image or Video */
+
+.wrapper {
+  background: url("https://placeholdit.co//i/1920x1080?text=Background&bg=2f2300") center center/cover;
+  z-index: -1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Header */
+
+.loaded .header {
+  -webkit-transform: translate(-50%, -70%);
+     -moz-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+}
+
+@media all and (min-height: 350px) {
+  .loaded .header {
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.header {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%) scale(.8);
+     -moz-transform: translate(-50%, -50%) scale(.8);
+          transform: translate(-50%, -50%) scale(.8);
+  -webkit-transition: left .3s ease-out, top .3s ease-out, -webkit-transform 1s ease-out;
+          transition: left .3s ease-out, top .3s ease-out, -webkit-transform 1s ease-out;
+     -moz-transition: left .3s ease-out, top .3s ease-out, transform 1s ease-out, -moz-transform 1s ease-out;
+          transition: left .3s ease-out, top .3s ease-out, transform 1s ease-out;
+          transition: left .3s ease-out, top .3s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out, -moz-transform 1s ease-out;
+}
+
+@media all and (min-width: 1024px) {
+  .header {
+    width: 50%;
+  }
+}
+
+.header__logo {
+  height: 200px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 0;
+}
+
+@media all and (min-width: 1024px) {
+  .header__logo {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 50px;
+  }
+}
+
+.header__logo img {
+  max-height: 100%;
+}
+
+.header__menu {
+  font-size: 0;
+}
+
+.header__menu a {
+  font: 28px "Unica One";
+  display: block;
+  position: relative;
+  color: white;
+  padding: 10px 27px;
+}
+
+@media all and (min-width: 768px) {
+  .header__menu a {
+    display: inline-block;
+  }
+}
+
+.header__menu a:before,
+.header__menu a:after {
+  position: absolute;
+  top: 100%;
+  content: "";
+  height: 2px;
+  width: 0;
+  background: #EAB311;
+  -webkit-transition: width .2s ease-out;
+     -moz-transition: width .2s ease-out;
+          transition: width .2s ease-out;
+}
+
+.header__menu a:before {
+  right: 50%;
+}
+
+.header__menu a:after {
+  left: 50%;
+}
+
+.header__menu a:hover:before,
+.header__menu a:hover:after {
+  width: 40px;
+}
+
+/* Close Button For Sides */
+
+.close {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  right: -15px;
+  padding: 10px;
+  top: 20px;
+  font-size: 40px;
+  line-height: 22px;
+  -webkit-transition: color .2s;
+     -moz-transition: color .2s;
+          transition: color .2s;
+}
+
+@media all and (min-width: 1024px) and (min-height: 568px) {
+  .close {
+    top: 50px;
+  }
+}
+
+.close:hover {
+  color: white;
+}
+
+/* Main Styles For Dropdown */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  background: #181818;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  cursor: auto;
+  width: 250px;
+  z-index: 20;
+  opacity: 0;
+  line-height: 20px;
+  -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 0 0;
+     -moz-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: opacity .2s ease-out, -webkit-transform .2s ease-out;
+          transition: opacity .2s ease-out, -webkit-transform .2s ease-out;
+     -moz-transition: transform .2s ease-out, opacity .2s ease-out, -moz-transform .2s ease-out;
+          transition: transform .2s ease-out, opacity .2s ease-out;
+          transition: transform .2s ease-out, opacity .2s ease-out, -webkit-transform .2s ease-out, -moz-transform .2s ease-out;
+}
+
+.dropdown.open > .dropdown__menu {
+  opacity: 1;
+  -webkit-transform: none;
+     -moz-transform: none;
+          transform: none;
+}
+
+/* Basic Form Styles */
+
+.form-field {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+
+.form-field textarea {
+  max-width: 100%;
+  height: 120px;
+}
+
+.form-field input,
+.form-field textarea {
+  font: 17px/25px "Unica One";
+  display: block;
+  background: #101010;
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  border-bottom: 2px solid #14120E;
+  outline: none;
+  width: 100%;
+  padding: 12px 20px;
+}
+
+.form-field input::-webkit-input-placeholder,
+.form-field textarea::-webkit-input-placeholder {
+  color: #D8D8D8;
+}
+
+.form-field input::-moz-placeholder,
+.form-field textarea::-moz-placeholder {
+  color: #D8D8D8;
+}
+
+.form-field input:-moz-placeholder,
+.form-field textarea:-moz-placeholder {
+  color: #D8D8D8;
+}
+
+.form-field input:-ms-input-placeholder,
+.form-field textarea:-ms-input-placeholder {
+  color: #D8D8D8;
+}
+
+.form-field input:focus + span:before,
+.form-field input:focus + span:after,
+.form-field textarea:focus + span:before,
+.form-field textarea:focus + span:after {
+  width: 50%;
+}
+
+.form-field span {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.form-field span:after,
+.form-field span:before {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  width: 0;
+  background: #EAB311;
+  -webkit-transition: width .2s ease-out;
+     -moz-transition: width .2s ease-out;
+          transition: width .2s ease-out;
+}
+
+.form-field span:before {
+  right: 50%;
+}
+
+.form-field span:after {
+  left: 50%;
+}
+
+.form-field button {
+  background: #191919;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  padding: 15px;
+  outline: none;
+  border: 0;
+  -webkit-transition: background-color .2s ease-out;
+     -moz-transition: background-color .2s ease-out;
+          transition: background-color .2s ease-out;
+}
+
+.form-field button + textarea {
+  padding-right: 60px;
+}
+
+.form-field button:hover {
+  background: #1F1F1F;
+}
+
+.form-field button:hover img {
+  -webkit-animation: send-button .5s infinite alternate;
+     -moz-animation: send-button .5s infinite alternate;
+          animation: send-button .5s infinite alternate;
+}
+
+@-webkit-keyframes send-button {
+  from {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  to {
+    -webkit-transform: translate(3px, -3px);
+            transform: translate(3px, -3px);
+  }
+}
+
+@-moz-keyframes send-button {
+  from {
+    -moz-transform: none;
+         transform: none;
+  }
+
+  to {
+    -moz-transform: translate(3px, -3px);
+         transform: translate(3px, -3px);
+  }
+}
+
+@keyframes send-button {
+  from {
+    -webkit-transform: none;
+       -moz-transform: none;
+            transform: none;
+  }
+
+  to {
+    -webkit-transform: translate(3px, -3px);
+       -moz-transform: translate(3px, -3px);
+            transform: translate(3px, -3px);
+  }
+}
+
+/* Typography */
+
+.title,
+.title-mini {
+  margin: 0;
+  font-family: "Unica One";
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 25px;
+  margin-top: 20px;
+  color: white;
+  background: #D8A100;
+  display: inline-block;
+  padding: 0 25px;
+  line-height: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: background-color .2s ease-out;
+     -moz-transition: background-color .2s ease-out;
+          transition: background-color .2s ease-out;
+}
+
+@media all and (min-width: 1024px) and (min-height: 568px) {
+  .title {
+    font-size: 25px;
+    line-height: 60px;
+    height: 60px;
+    margin-top: 40px;
+  }
+}
+
+.title-mini {
+  display: block;
+  font-size: 20px;
+  color: #D8D8D8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: color .15s ease-out, text-shadow .15s ease-out;
+     -moz-transition: color .15s ease-out, text-shadow .15s ease-out;
+          transition: color .15s ease-out, text-shadow .15s ease-out;
+}
+
+/* Side Styles
+ * ==============================*/
+
+.side {
+  background: #1A1A19;
+  position: absolute;
+  z-index: 10;
+  min-width: 300px;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform .3s ease-out;
+          transition: -webkit-transform .3s ease-out;
+     -moz-transition:         transform .3s ease-out, -moz-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+          transition:         transform .3s ease-out, -webkit-transform .3s ease-out, -moz-transform .3s ease-out;
+}
+
+.side_menu {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+     -moz-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+@media all and (min-width: 768px) {
+  .side_menu {
+    right: 55%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .side_menu {
+    right: 65%;
+  }
+}
+
+.side_about {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translateY(-100%);
+     -moz-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+@media all and (min-width: 768px) and (min-height: 568px) {
+  .side_about {
+    bottom: 30%;
+  }
+}
+
+@media all and (min-width: 1024px) and (min-height: 824px) {
+  .side_about {
+    bottom: 50%;
+  }
+}
+
+.side_date {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(100%);
+     -moz-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+@media all and (min-width: 768px) {
+  .side_date {
+    left: 55%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .side_date {
+    left: 65%;
+  }
+}
+
+.side_contacts {
+  background: #201B11;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+     -moz-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+@media all and (min-width: 768px) and (min-height: 568px) {
+  .side_contacts {
+    top: 35%;
+  }
+}
+
+@media all and (min-width: 768px) and (min-height: 824px) {
+  .side_contacts {
+    top: 50%;
+  }
+}
+
+.side_open_menu .header {
+  left: 65%;
+}
+
+.side_open_menu .side_menu {
+  -webkit-transform: none;
+     -moz-transform: none;
+          transform: none;
+}
+
+.side_open_about .header {
+  top: 65%;
+}
+
+.side_open_about .side_about {
+  -webkit-transform: none;
+     -moz-transform: none;
+          transform: none;
+}
+
+.side_open_date .header {
+  left: 35%;
+}
+
+.side_open_date .side_date {
+  -webkit-transform: none;
+     -moz-transform: none;
+          transform: none;
+}
+
+.side_open_contacts .header {
+  top: 3%;
+}
+
+@media all and (min-width: 768px) and (min-height: 824px) {
+  .side_open_contacts .header {
+    top: 25%;
+  }
+}
+
+.side_open_contacts .side_contacts {
+  -webkit-transform: none;
+     -moz-transform: none;
+          transform: none;
+}
+
+.side > div {
+  background: #1F1F1E;
+  position: relative;
+  padding: 0 20px;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display:    -moz-box;
+  display:         flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-flow: column;
+}
+
+.side__head {
+  pointer-events: none;
+  position: relative;
+  z-index: 40;
+}
+
+.side__head > * {
+  pointer-events: auto;
+}
+
+.side__head.dropdown .dropdown__menu {
+  background: #D8A100;
+}
+
+.side__head.dropdown .title {
+  cursor: pointer;
+}
+
+.side__head.dropdown .title:hover {
+  background: #C99600;
+}
+
+.side__head.dropdown .title:hover:after {
+  -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.side__head.dropdown .title:after,
+.side__head.dropdown .title:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+}
+
+.side__head.dropdown .title:after {
+  right: -30px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid #D8A100;
+  border-left: 1px solid #D8A100;
+  top: 15px;
+  -webkit-transition: -webkit-transform .15s;
+          transition: -webkit-transform .15s;
+     -moz-transition:         transform .15s, -moz-transform .15s;
+          transition:         transform .15s;
+          transition:         transform .15s, -webkit-transform .15s, -moz-transform .15s;
+  -webkit-transform: rotate(-135deg);
+     -moz-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+@media all and (min-width: 1024px) and (min-height: 568px) {
+  .side__head.dropdown .title:after {
+    top: 27px;
+  }
+}
+
+.side__head.dropdown .title:before {
+  width: 50px;
+  right: -50px;
+  height: 40px;
+}
+
+@media all and (min-width: 1024px) and (min-height: 568px) {
+  .side__head.dropdown .title:before {
+    height: 60px;
+  }
+}
+
+.side__head.dropdown.open .title:after {
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.side__wrapper {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.side__wrapper.scroll-wrapper:after,
+.side__wrapper.scroll-wrapper:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  z-index: 21;
+  height: 1px;
+}
+
+.side__wrapper.scroll-wrapper:after {
+  bottom: -1px;
+  box-shadow: 0 0 20px 15px #1F1F1E;
+}
+
+.side__wrapper.scroll-wrapper:before {
+  top: -1px;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+     -moz-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
+  box-shadow: 0 0 30px 20px #1F1F1E;
+}
+
+.side__wrapper.scroll-shadow:before {
+  opacity: 1;
+}
+
+/* Side "menu" styles */
+
+.menu__tags div {
+  font: 18px "Unica One";
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  -webkit-transition: background-color .2s ease-in-out;
+     -moz-transition: background-color .2s ease-in-out;
+          transition: background-color .2s ease-in-out;
+  padding: 8px 25px;
+}
+
+@media all and (min-width: 1024px) {
+  .menu__tags div {
+    font-size: 20px;
+    padding: 10px 25px;
+  }
+}
+
+.menu__tags div:hover,
+.menu__tags div.tagsort-active {
+  background: #CE9900;
+}
+
+.menu__category {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display:    -moz-box;
+  display:         flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.menu__prueba{
+  font: 25px/25px "Bungee";
+  margin-top: 0;
+  margin-bottom: 15px;
+  position: relative;
+  -webkit-flex-basis: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
+  color: #6A6965;
+
+
+
+}
+.menu__title {
+  font: 25px/25px "Bungee";
+  margin-top: 0;
+  margin-bottom: 15px;
+  position: relative;
+  -webkit-flex-basis: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
+  color: #6A6965;
+}
+
+@media all and (min-width: 1024px) {
+  .menu__title {
+    margin: 10;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.menu__prueba {
+    margin: 10;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+.menu__item {
+  -webkit-flex-basis: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+@media all and (min-width: 450px) {
+  .menu__item {
+    -webkit-flex-basis: 50%;
+            flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+.menu__item .gc {
+  -webkit-transition: color .15s ease-out, text-shadow .15s ease-out;
+     -moz-transition: color .15s ease-out, text-shadow .15s ease-out;
+          transition: color .15s ease-out, text-shadow .15s ease-out;
+  float: left;
+  margin: 0 15px 0 10px;
+  color: #EAB311;
+  font-size: 40px;
+}
+
+.menu__item .dropdown__menu {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 20px;
+  font-style: italic;
+}
+
+@media all and (min-width: 450px) {
+  .menu__item .dropdown__menu {
+    width: 300px;
+  }
+}
+
+.menu__item .dropdown__menu p {
+  margin: 20px 0 30px;
+}
+
+.menu__item .dropdown__img {
+  margin: 0 20px 20px;
+}
+
+@media all and (min-width: 450px) {
+  .menu__item:nth-child(odd) .dropdown__menu {
+    left: auto;
+    right: 0;
+    -webkit-transform-origin: 100% 0;
+       -moz-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+}
+
+.menu__item.dropdown {
+  cursor: pointer;
+}
+
+.menu__item.dropdown:hover .gc {
+  color: #F4F4F4;
+  text-shadow: 0 0 20px rgba(255, 255, 255, .6);
+}
+
+.menu__item.dropdown:hover .title-mini {
+  color: #EAB311;
+  text-shadow: 0 0 10px rgba(234, 179, 17, .6);
+}
+
+.menu__info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display:    -moz-box;
+  display:         flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.menu__info .title-mini {
+  -webkit-flex-basis: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
+}
+
+.menu__info span {
+  font-family: "Unica One";
+  -webkit-flex-basis: 50%;
+          flex-basis: 50%;
+  max-width: 50%;
+}
+
+/* Side "about" styles */
+
+.about {
+  margin: 0 auto;
+}
+
+@media all and (min-width: 1024px) {
+  .about {
+    width: 90%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .about {
+    width: 75%;
+  }
+}
+
+@media all and (min-width: 1500px) {
+  .about {
+    width: 60%;
+  }
+}
+
+.about__blocks {
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display:    -moz-box;
+  display:         flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+}
+
+@media all and (min-width: 768px) {
+  .about__blocks {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+            flex-direction: row;
+  }
+}
+
+.about__info .title-mini {
+  font-size: 24px;
+}
+
+.about__info p {
+  margin-bottom: 30px;
+}
+
+@media all and (min-width: 768px) {
+  .about__info {
+    max-width: 60%;
+    padding-right: 15px;
+  }
+
+  .about__images {
+    max-width: 40%;
+  }
+}
+
+.about__images {
+  margin-left: -15px;
+}
+
+@media all and (min-width: 768px) {
+  .about__images {
+    margin: 0;
+  }
+}
+
+.about__images img {
+  display: block;
+  width: 100%;
+}
+
+.about__img {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  float: left;
+}
+
+.about__img_half {
+  width: 50%;
+}
+
+.about__img_full {
+  width: 100%;
+}
+
+/* Side "date" styles */
+
+.date .side__wrapper {
+  margin-left: -20px;
+}
+.date10 .side__wrapper {
+  margin-left: -20px;
+}
+
+.date__item {
+  color: #D8D8D8;
+  padding: 25px;
+  display: block;
+  -webkit-transition: background-color .15s ease-out;
+     -moz-transition: background-color .15s ease-out;
+          transition: background-color .15s ease-out;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.date__item h3 {
+  margin-bottom: 20px;
+}
+
+.date__item p {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.date__item span {
+  display: block;
+  margin-top: 10px;
+  color: #D8A100;
+  font-weight: bold;
+}
+
+.date__item:hover {
+  background: rgba(0, 0, 0, .15);
+  color: #D8D8D8;
+}
+
+.date__item:hover .date__image {
+  background: #D8A100;
+}
+
+.date__item:hover .date__image img {
+  opacity: .2;
+}
+
+.date__item:hover .date__image:before {
+  top: 50%;
+  opacity: 1;
+}
+
+.date__image {
+  background: #1F1F1E;
+  position: relative;
+  -webkit-transition: background-color .3s ease-out;
+     -moz-transition: background-color .3s ease-out;
+          transition: background-color .3s ease-out;
+}
+
+.date__image:before {
+  background: url("../img/icons/view.svg") 0 0/cover;
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  -webkit-transition: top .3s ease-in-out, opacity .3s ease-in-out;
+     -moz-transition: top .3s ease-in-out, opacity .3s ease-in-out;
+          transition: top .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.date__image img {
+  -webkit-transition: opacity .3s ease-out;
+     -moz-transition: opacity .3s ease-out;
+          transition: opacity .3s ease-out;
+}
+
+
+
+/* Side "contacts" styles */
+
+.contacts .side__head {
+  width: 100%;
+}
+
+@media all and (min-width: 1024px) {
+  .contacts .side__head {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .contacts .side__head {
+    width: 75%;
+  }
+}
+
+@media all and (min-width: 1500px) {
+  .contacts .side__head {
+    width: 60%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .contacts .side__wrapper {
+    width: 290px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .contacts .side__wrapper {
+    margin-left: 5%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .contacts .side__wrapper {
+    margin-left: 12.5%;
+  }
+}
+
+@media all and (min-width: 1500px) {
+  .contacts .side__wrapper {
+    margin-left: 20%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .contacts .side__wrapper {
+    position: static !important;
+  }
+
+  .contacts .side__wrapper > .scroll-content {
+    position: static !important;
+  }
+}
+
+.contacts .side__wrapper:before,
+.contacts .side__wrapper:after {
+  display: none;
+}
+
+.contacts__map {
+  height: 300px;
+}
+
+@media all and (min-width: 768px) {
+  .contacts__map {
+    height: 100%;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .contacts .scroll-element {
+    display: none !important;
+  }
+}
+
+/* Google Map */
+
+#map {
+  height: 100%;
+}
+
+/* Flaticon Icon Font: Gastronomy Collection 
+ * https://www.flaticon.com/packs/gastronomy-collection-2
+ * ==============================*/
+
+@font-face {
+  font-family: "Gastronomy Collection";
+  src: url("../fonts/GastronomyCollection.eot");
+  src: url("../fonts/GastronomyCollection.eot?#iefix") format("embedded-opentype"), url("../fonts/GastronomyCollection.woff") format("woff"), url("../fonts/GastronomyCollection.ttf") format("truetype"), url("../fonts/GastronomyCollection.svg#GastronomyCollection") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Gastronomy Collection";
+    src: url("../fonts/GastronomyCollection.svg#GastronomyCollection") format("svg");
+  }
+}
+
+.gc:before {
+  display: inline-block;
+  font-family: "Gastronomy Collection";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  font-smoothing: antialiased;
+}
+
+.gc-apple:before {
+  content: "\f100";
+}
+
+.gc-apple-1:before {
+  content: "\f101";
+}
+
+.gc-asparagus:before {
+  content: "\f102";
+}
+
+.gc-aubergine:before {
+  content: "\f103";
+}
+
+.gc-avocado:before {
+  content: "\f104";
+}
+
+.gc-bacon:before {
+  content: "\f105";
+}
+
+.gc-baguette:before {
+  content: "\f106";
+}
+
+.gc-banana:before {
+  content: "\f107";
+}
+
+.gc-beans:before {
+  content: "\f108";
+}
+
+.gc-biscuit:before {
+  content: "\f109";
+}
+
+.gc-blueberries:before {
+  content: "\f10a";
+}
+
+.gc-boiled:before {
+  content: "\f10b";
+}
+
+.gc-bowl:before {
+  content: "\f10c";
+}
+
+.gc-bowl-1:before {
+  content: "\f10d";
+}
+
+.gc-bread:before {
+  content: "\f10e";
+}
+
+.gc-bread-1:before {
+  content: "\f10f";
+}
+
+.gc-bread-2:before {
+  content: "\f110";
+}
+
+.gc-broccoli:before {
+  content: "\f111";
+}
+
+.gc-butcher:before {
+  content: "\f112";
+}
+
+.gc-butter:before {
+  content: "\f113";
+}
+
+.gc-cabbage:before {
+  content: "\f114";
+}
+
+.gc-cake:before {
+  content: "\f115";
+}
+
+.gc-can:before {
+  content: "\f116";
+}
+
+.gc-can-1:before {
+  content: "\f117";
+}
+
+.gc-can-2:before {
+  content: "\f118";
+}
+
+.gc-candy:before {
+  content: "\f119";
+}
+
+.gc-candy-1:before {
+  content: "\f11a";
+}
+
+.gc-carrot:before {
+  content: "\f11b";
+}
+
+.gc-cauliflower:before {
+  content: "\f11c";
+}
+
+.gc-cereals:before {
+  content: "\f11d";
+}
+
+.gc-cheese:before {
+  content: "\f11e";
+}
+
+.gc-cheese-1:before {
+  content: "\f11f";
+}
+
+.gc-chef:before {
+  content: "\f120";
+}
+
+.gc-cherries:before {
+  content: "\f121";
+}
+
+.gc-chili:before {
+  content: "\f122";
+}
+
+.gc-chips:before {
+  content: "\f123";
+}
+
+.gc-chives:before {
+  content: "\f124";
+}
+
+.gc-chocolate:before {
+  content: "\f125";
+}
+
+.gc-coconut:before {
+  content: "\f126";
+}
+
+.gc-coffee:before {
+  content: "\f127";
+}
+
+.gc-coffee-1:before {
+  content: "\f128";
+}
+
+.gc-coffee-2:before {
+  content: "\f129";
+}
+
+.gc-coffee-3:before {
+  content: "\f12a";
+}
+
+.gc-coffee-4:before {
+  content: "\f12b";
+}
+
+.gc-coffee-maker:before {
+  content: "\f12c";
+}
+
+.gc-cookies:before {
+  content: "\f12d";
+}
+
+.gc-corckscrew:before {
+  content: "\f12e";
+}
+
+.gc-corn:before {
+  content: "\f12f";
+}
+
+.gc-corndog:before {
+  content: "\f130";
+}
+
+.gc-croissant:before {
+  content: "\f131";
+}
+
+.gc-cucumber:before {
+  content: "\f132";
+}
+
+.gc-cup:before {
+  content: "\f133";
+}
+
+.gc-cupcake:before {
+  content: "\f134";
+}
+
+.gc-cupcake-1:before {
+  content: "\f135";
+}
+
+.gc-cupcake-2:before {
+  content: "\f136";
+}
+
+.gc-cutlery:before {
+  content: "\f137";
+}
+
+.gc-dairy:before {
+  content: "\f138";
+}
+
+.gc-dish:before {
+  content: "\f139";
+}
+
+.gc-dishes:before {
+  content: "\f13a";
+}
+
+.gc-doughnut:before {
+  content: "\f13b";
+}
+
+.gc-doughnut-1:before {
+  content: "\f13c";
+}
+
+.gc-doughnut-2:before {
+  content: "\f13d";
+}
+
+.gc-egg:before {
+  content: "\f13e";
+}
+
+.gc-eggs:before {
+  content: "\f13f";
+}
+
+.gc-fig:before {
+  content: "\f140";
+}
+
+.gc-fish:before {
+  content: "\f141";
+}
+
+.gc-flour:before {
+  content: "\f142";
+}
+
+.gc-flour-1:before {
+  content: "\f143";
+}
+
+.gc-food:before {
+  content: "\f144";
+}
+
+.gc-fork:before {
+  content: "\f145";
+}
+
+.gc-frappe:before {
+  content: "\f146";
+}
+
+.gc-fries:before {
+  content: "\f147";
+}
+
+.gc-garlic:before {
+  content: "\f148";
+}
+
+.gc-gingerbread:before {
+  content: "\f149";
+}
+
+.gc-glass:before {
+  content: "\f14a";
+}
+
+.gc-glass-1:before {
+  content: "\f14b";
+}
+
+.gc-glass-2:before {
+  content: "\f14c";
+}
+
+.gc-glass-3:before {
+  content: "\f14d";
+}
+
+.gc-glass-4:before {
+  content: "\f14e";
+}
+
+.gc-glass-5:before {
+  content: "\f14f";
+}
+
+.gc-glass-6:before {
+  content: "\f150";
+}
+
+.gc-grain:before {
+  content: "\f151";
+}
+
+.gc-grapes:before {
+  content: "\f152";
+}
+
+.gc-grater:before {
+  content: "\f153";
+}
+
+.gc-grinder:before {
+  content: "\f154";
+}
+
+.gc-groceries:before {
+  content: "\f155";
+}
+
+.gc-ham:before {
+  content: "\f156";
+}
+
+.gc-hamburguer:before {
+  content: "\f157";
+}
+
+.gc-hamburguer-1:before {
+  content: "\f158";
+}
+
+.gc-hazelnut:before {
+  content: "\f159";
+}
+
+.gc-honey:before {
+  content: "\f15a";
+}
+
+.gc-honey-1:before {
+  content: "\f15b";
+}
+
+.gc-hot-dog:before {
+  content: "\f15c";
+}
+
+.gc-hot-dog-1:before {
+  content: "\f15d";
+}
+
+.gc-ice-cream:before {
+  content: "\f15e";
+}
+
+.gc-ice-cream-1:before {
+  content: "\f15f";
+}
+
+.gc-ice-cream-10:before {
+  content: "\f160";
+}
+
+.gc-ice-cream-11:before {
+  content: "\f161";
+}
+
+.gc-ice-cream-12:before {
+  content: "\f162";
+}
+
+.gc-ice-cream-13:before {
+  content: "\f163";
+}
+
+.gc-ice-cream-14:before {
+  content: "\f164";
+}
+
+.gc-ice-cream-2:before {
+  content: "\f165";
+}
+
+.gc-ice-cream-3:before {
+  content: "\f166";
+}
+
+.gc-ice-cream-4:before {
+  content: "\f167";
+}
+
+.gc-ice-cream-5:before {
+  content: "\f168";
+}
+
+.gc-ice-cream-6:before {
+  content: "\f169";
+}
+
+.gc-ice-cream-7:before {
+  content: "\f16a";
+}
+
+.gc-ice-cream-8:before {
+  content: "\f16b";
+}
+
+.gc-ice-cream-9:before {
+  content: "\f16c";
+}
+
+.gc-jam:before {
+  content: "\f16d";
+}
+
+.gc-jam-1:before {
+  content: "\f16e";
+}
+
+.gc-jawbreaker:before {
+  content: "\f16f";
+}
+
+.gc-jelly:before {
+  content: "\f170";
+}
+
+.gc-kebab:before {
+  content: "\f171";
+}
+
+.gc-kebab-1:before {
+  content: "\f172";
+}
+
+.gc-kebab-2:before {
+  content: "\f173";
+}
+
+.gc-kitchen:before {
+  content: "\f174";
+}
+
+.gc-knife:before {
+  content: "\f175";
+}
+
+.gc-knife-1:before {
+  content: "\f176";
+}
+
+.gc-knife-2:before {
+  content: "\f177";
+}
+
+.gc-knife-3:before {
+  content: "\f178";
+}
+
+.gc-knives:before {
+  content: "\f179";
+}
+
+.gc-ladle:before {
+  content: "\f17a";
+}
+
+.gc-lemon:before {
+  content: "\f17b";
+}
+
+.gc-lemon-1:before {
+  content: "\f17c";
+}
+
+.gc-lime:before {
+  content: "\f17d";
+}
+
+.gc-meat:before {
+  content: "\f17e";
+}
+
+.gc-meat-1:before {
+  content: "\f17f";
+}
+
+.gc-meat-2:before {
+  content: "\f180";
+}
+
+.gc-milk:before {
+  content: "\f181";
+}
+
+.gc-milk-1:before {
+  content: "\f182";
+}
+
+.gc-mixer:before {
+  content: "\f183";
+}
+
+.gc-mug:before {
+  content: "\f184";
+}
+
+.gc-mushroom:before {
+  content: "\f185";
+}
+
+.gc-mushrooms:before {
+  content: "\f186";
+}
+
+.gc-mustard:before {
+  content: "\f187";
+}
+
+.gc-mustard-1:before {
+  content: "\f188";
+}
+
+.gc-mustard-2:before {
+  content: "\f189";
+}
+
+.gc-noodles:before {
+  content: "\f18a";
+}
+
+.gc-oat:before {
+  content: "\f18b";
+}
+
+.gc-octopus:before {
+  content: "\f18c";
+}
+
+.gc-oil:before {
+  content: "\f18d";
+}
+
+.gc-olives:before {
+  content: "\f18e";
+}
+
+.gc-onion:before {
+  content: "\f18f";
+}
+
+.gc-onion-1:before {
+  content: "\f190";
+}
+
+.gc-orange:before {
+  content: "\f191";
+}
+
+.gc-ornating:before {
+  content: "\f192";
+}
+
+.gc-pan:before {
+  content: "\f193";
+}
+
+.gc-pancakes:before {
+  content: "\f194";
+}
+
+.gc-pancakes-1:before {
+  content: "\f195";
+}
+
+.gc-pasta:before {
+  content: "\f196";
+}
+
+.gc-pasta-1:before {
+  content: "\f197";
+}
+
+.gc-peach:before {
+  content: "\f198";
+}
+
+.gc-pear:before {
+  content: "\f199";
+}
+
+.gc-peas:before {
+  content: "\f19a";
+}
+
+.gc-pepper:before {
+  content: "\f19b";
+}
+
+.gc-pepper-1:before {
+  content: "\f19c";
+}
+
+.gc-pickles:before {
+  content: "\f19d";
+}
+
+.gc-pie:before {
+  content: "\f19e";
+}
+
+.gc-pie-1:before {
+  content: "\f19f";
+}
+
+.gc-pie-2:before {
+  content: "\f1a0";
+}
+
+.gc-pineapple:before {
+  content: "\f1a1";
+}
+
+.gc-pint:before {
+  content: "\f1a2";
+}
+
+.gc-pistachio:before {
+  content: "\f1a3";
+}
+
+.gc-pizza:before {
+  content: "\f1a4";
+}
+
+.gc-pizza-1:before {
+  content: "\f1a5";
+}
+
+.gc-pizza-2:before {
+  content: "\f1a6";
+}
+
+.gc-pizza-3:before {
+  content: "\f1a7";
+}
+
+.gc-pizza-4:before {
+  content: "\f1a8";
+}
+
+.gc-pizza-5:before {
+  content: "\f1a9";
+}
+
+.gc-pomegranate:before {
+  content: "\f1aa";
+}
+
+.gc-popsicle:before {
+  content: "\f1ab";
+}
+
+.gc-pot:before {
+  content: "\f1ac";
+}
+
+.gc-pot-1:before {
+  content: "\f1ad";
+}
+
+.gc-pot-2:before {
+  content: "\f1ae";
+}
+
+.gc-potatoes:before {
+  content: "\f1af";
+}
+
+.gc-potatoes-1:before {
+  content: "\f1b0";
+}
+
+.gc-potatoes-2:before {
+  content: "\f1b1";
+}
+
+.gc-pretzel:before {
+  content: "\f1b2";
+}
+
+.gc-pudding:before {
+  content: "\f1b3";
+}
+
+.gc-pumpkin:before {
+  content: "\f1b4";
+}
+
+.gc-radish:before {
+  content: "\f1b5";
+}
+
+.gc-raspberry:before {
+  content: "\f1b6";
+}
+
+.gc-rice:before {
+  content: "\f1b7";
+}
+
+.gc-risotto:before {
+  content: "\f1b8";
+}
+
+.gc-rolling-pin:before {
+  content: "\f1b9";
+}
+
+.gc-salad:before {
+  content: "\f1ba";
+}
+
+.gc-salad-1:before {
+  content: "\f1bb";
+}
+
+.gc-salami:before {
+  content: "\f1bc";
+}
+
+.gc-salmon:before {
+  content: "\f1bd";
+}
+
+.gc-salt:before {
+  content: "\f1be";
+}
+
+.gc-sandwich:before {
+  content: "\f1bf";
+}
+
+.gc-sandwich-1:before {
+  content: "\f1c0";
+}
+
+.gc-sausage:before {
+  content: "\f1c1";
+}
+
+.gc-scale:before {
+  content: "\f1c2";
+}
+
+.gc-seeds:before {
+  content: "\f1c3";
+}
+
+.gc-shrimp:before {
+  content: "\f1c4";
+}
+
+.gc-slotted-spoon:before {
+  content: "\f1c5";
+}
+
+.gc-sorbet:before {
+  content: "\f1c6";
+}
+
+.gc-spaguetti:before {
+  content: "\f1c7";
+}
+
+.gc-spatula:before {
+  content: "\f1c8";
+}
+
+.gc-spatula-1:before {
+  content: "\f1c9";
+}
+
+.gc-spices:before {
+  content: "\f1ca";
+}
+
+.gc-spoon:before {
+  content: "\f1cb";
+}
+
+.gc-steak:before {
+  content: "\f1cc";
+}
+
+.gc-stew:before {
+  content: "\f1cd";
+}
+
+.gc-stew-1:before {
+  content: "\f1ce";
+}
+
+.gc-strainer:before {
+  content: "\f1cf";
+}
+
+.gc-strawberry:before {
+  content: "\f1d0";
+}
+
+.gc-sushi:before {
+  content: "\f1d1";
+}
+
+.gc-sushi-1:before {
+  content: "\f1d2";
+}
+
+.gc-sushi-2:before {
+  content: "\f1d3";
+}
+
+.gc-taco:before {
+  content: "\f1d4";
+}
+
+.gc-tea:before {
+  content: "\f1d5";
+}
+
+.gc-tea-1:before {
+  content: "\f1d6";
+}
+
+.gc-teapot:before {
+  content: "\f1d7";
+}
+
+.gc-teapot-1:before {
+  content: "\f1d8";
+}
+
+.gc-teaspoon:before {
+  content: "\f1d9";
+}
+
+.gc-tenderizer:before {
+  content: "\f1da";
+}
+
+.gc-thermos:before {
+  content: "\f1db";
+}
+
+.gc-toast:before {
+  content: "\f1dc";
+}
+
+.gc-toaster:before {
+  content: "\f1dd";
+}
+
+.gc-toffee:before {
+  content: "\f1de";
+}
+
+.gc-tomato:before {
+  content: "\f1df";
+}
+
+.gc-turkey:before {
+  content: "\f1e0";
+}
+
+.gc-water:before {
+  content: "\f1e1";
+}
+
+.gc-water-1:before {
+  content: "\f1e2";
+}
+
+.gc-watermelon:before {
+  content: "\f1e3";
+}
+
+.gc-whisk:before {
+  content: "\f1e4";
+}
+
+.gc-wrap:before {
+  content: "\f1e5";
+}
+
+#banner {
+  background: #D8A100;
+  text-align: center;
+  text-decoration-color: black;
+  color: black;
+  margin:0px;
+}
